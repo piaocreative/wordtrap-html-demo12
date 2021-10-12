@@ -1,0 +1,70 @@
+
+/* ----------------------------------------------------------------
+
+	banner.scss
+
+-----------------------------------------------------------------*/
+
+
+/* ----------------------------------------------------------------
+	Banner
+-----------------------------------------------------------------*/
+
+
+/* ----------------------------------------------------------------
+	Add here styles for banner. Thanks!
+-----------------------------------------------------------------*/
+
+
+#banner {
+    position: relative;
+    height: 55rem;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .banner-wrap {
+        padding-left: 4.375rem;
+        padding-right: 4.375rem;
+    }
+}
+
+.banner-sm {
+    padding: 1.5rem;
+    background-color: #f2f2f2;
+}
+
+.banner-arrow {
+    position: absolute;
+    left: 35%;
+    bottom: 2rem;
+    width: 25%;
+    margin: auto;
+
+    @include media-breakpoint-down(lg) {
+        bottom: 0;
+    }
+}
+
+.banners {
+    .slick-dots {
+        display: flex;
+        flex-direction: column;
+        width: 2rem;
+        position: absolute;
+        right: -9rem;
+        top: 40%;
+
+        .slick-active {
+            button {
+                &:before {
+                    font-size: 0.6rem;
+                }
+            }
+        }
+    }
+}

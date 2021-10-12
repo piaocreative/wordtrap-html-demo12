@@ -1,0 +1,319 @@
+
+/* ----------------------------------------------------------------
+
+	shop.scss
+
+-----------------------------------------------------------------*/
+
+
+/* ----------------------------------------------------------------
+	Shop
+-----------------------------------------------------------------*/
+
+
+/* ----------------------------------------------------------------
+	Add here styles for shop pages. Thanks!
+-----------------------------------------------------------------*/
+
+/* Product
+-----------------------------------------------------------------*/
+.products {
+	.slick-prev, .slick-next {
+		top: 16rem;
+	}
+	
+	.slick-prev {
+		left:-1rem;
+	
+		@include media-breakpoint-down(lg) {
+		   display: none !important;
+	   }
+	}
+	
+	.slick-next {
+	   right: 0;
+	
+	   @include media-breakpoint-down(lg) {
+		   display: none !important;
+	   }
+	}
+}
+
+.product {
+	margin-bottom: 1.875rem;
+	position: relative;
+	text-align: center;
+
+	.product-image {
+		position: relative;
+
+		img {
+			width: 100%;
+			max-width: 20rem;
+			max-height: 23.5rem;
+			margin: auto;
+		}
+
+		> a:nth-of-type(2) {
+			opacity: 0;
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			right: 0;
+			@include transition(all 0.3s ease-in-out);
+		}
+	}
+
+	.product-details {
+		padding: 1.25rem 0;
+		z-index: 1;
+	}
+
+	.product-price {
+		font-size: 1.5rem;
+		font-family: $heading-font;
+		font-weight: 300;
+		line-height: 1;
+
+		del {
+			position: relative;
+			margin-left: 0.5rem;
+			color: $secondary;
+			font-weight: 700;
+			text-decoration: none;
+
+			&:before {
+				position: absolute;
+				content: "";
+				left: 0;
+				top: 50%;
+				right: 0;
+				border-top: 1px solid;
+				border-color: inherit;
+				transform:rotate(5deg);
+			}
+		}
+	}
+
+	.product-categories {
+		margin-top: -0.3rem;
+		a {
+			color: #6a6a6a;
+			font-size: 0.875rem;
+			text-decoration: none;
+		}
+	}
+
+	.product-title {
+		font-family: $body-font;
+		font-size: 1.125rem;
+		font-weight: 300;
+		text-transform: uppercase;
+	}
+
+	.product-rating {
+		line-height: 1;
+		color: $secondary;
+		font-size: 0.875rem;
+
+		i {
+			color: $dark;
+			font-size: 0.6rem;
+
+			&.empty {
+				color: rgba(#f6aa46, 0.5);
+			}
+		}
+	}
+
+	&:hover {
+		.product-image {
+			> a:nth-of-type(2) {
+				z-index: 1;
+				opacity: 1;
+			}
+		}
+	}
+
+	.add-to-cart {
+		font-size: 0.875rem;
+		color: $dark;
+		text-transform: uppercase;
+
+		@include transition(all 0.3s ease-in-out);	
+
+		&:hover {
+			color: $theme-color;
+		}
+	}
+
+	&:hover {
+		.product-btns {
+			opacity: 1;
+		}
+	}
+
+	.bestseller {
+		position: absolute;
+		bottom: 3rem;
+		left: 1rem;
+		transform: rotate(286deg);
+	}
+}
+
+/* Collection
+-----------------------------------------------------------------*/
+.collections {
+	.slick-prev {
+		left:-4rem;
+	
+		@include media-breakpoint-down(lg) {
+		   display: none !important;
+	   }
+	}
+	
+	.slick-next {
+	   right: -4rem;
+	
+	   @include media-breakpoint-down(lg) {
+		   display: none !important;
+	   }
+	}
+}
+
+.collection {
+	position: relative;
+
+	.collection-image {
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.collection-details {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		padding: 1.5rem;
+	}
+
+	.collection-title {
+		font-size: 1rem;
+		font-family: $body-font;
+		font-weight: 300;
+		text-transform: uppercase;
+	}
+
+	.collection-price {
+		font-family: $heading-font;
+		font-size: 1.125rem;
+		font-weight: 300;
+	}
+
+	.collection-btn {
+		a {
+			&:before {
+				position: relative;
+				content: "";
+				display: inline-block;
+				width: 2rem;
+				height: 1px;
+				background-color: $dark;
+				vertical-align: middle;
+				margin-right: 1rem;
+			}
+		}
+	}
+
+	&.position-absolute {
+		top: 3rem;
+		left: -6rem;
+
+		@include media-breakpoint-down(lg) {
+			position: relative !important;
+			top: 0;
+			left: 0;
+		}
+	}
+}
+
+.collection-bg {
+	@include media-breakpoint-down(lg) {
+		display: none;
+	}
+}
+
+.collection-content {
+	position: relative;
+	right: -20rem;
+	bottom: 5rem;
+	max-width: 17rem;
+
+	@include media-breakpoint-down(lg) {
+		right: 0;
+		bottom: 0;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+}
+
+/* Ads
+-----------------------------------------------------------------*/
+
+.ads {
+    position: relative;
+    display: block;
+	margin-bottom: 1.875rem;
+
+	.ads-bg {
+		img {
+			height: 100%;
+
+			@include media-breakpoint-down(lg) {
+				height: 30rem;
+			}
+		}
+
+	}
+
+	&.ads1 {
+		.ads-body {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 100%;
+			padding: 4.5rem;
+
+			h5 {
+				font-size: 2rem;
+			}
+
+			p {
+				font-size: 0.75rem;
+				line-height: 1.5rem;
+				font-weight: 600;
+				color: $secondary;
+			}
+
+			@include media-breakpoint-down(lg) {
+				p {
+					margin-bottom: 0.5rem;
+				}
+
+				h2 {
+					margin: 0;
+				}
+			}
+
+			@include media-breakpoint-down(sm) {
+				padding-left: 3rem;
+				padding-right: 3rem;
+			}
+		}
+	}
+}

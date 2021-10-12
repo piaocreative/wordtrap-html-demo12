@@ -1,0 +1,60 @@
+
+/* ----------------------------------------------------------------
+
+	pagetitle.scss
+
+-----------------------------------------------------------------*/
+
+
+/* ----------------------------------------------------------------
+	Page Title
+-----------------------------------------------------------------*/
+
+
+/* ----------------------------------------------------------------
+	Add here styles for page title. Thanks!
+-----------------------------------------------------------------*/
+
+#page-title {
+	padding-left: 10vh;
+
+	.title {
+		font-weight: 300;
+		line-height: 1.2;
+		letter-spacing: 0.5rem;
+	}
+
+	.sub-title {
+		font-family: $heading-font;
+		font-weight: 600;
+		color: #262626;
+		letter-spacing: 0.05rem;
+	}
+
+	@include media-breakpoint-down(xl) {
+		padding-left: 2vh;
+	}
+
+	@include media-breakpoint-down(lg) {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+}
+
+.breadcrumb {
+	display: flex;
+	font-size: $h6-font-size;
+	padding: 0.625rem 0;
+
+	li {
+		padding: 0 0.625rem;
+
+		&.active {
+			color: #ddcef5;
+		}
+
+		&:first-child {
+			padding-left: 0;
+		}
+	}
+}
